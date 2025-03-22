@@ -30,10 +30,8 @@ namespace DistributedCacheSample
                 TimeSpan expiration = TimeSpan.FromMinutes(5);
                 TimeSpan lockExpiration = TimeSpan.FromSeconds(10);
 
-                // 🔒 Kilitleyerek cache'e veri ekle (await ile çağır!)
                 string result = await cacheService.GetOrAddByLockAsync(cacheKey, cacheValue, expiration, lockExpiration);
 
-                // 🖥️ Sonucu ekrana yazdır
                 Console.WriteLine($"Cache'ten gelen değer: {result}");
             }
         }
